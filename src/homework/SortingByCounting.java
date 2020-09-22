@@ -66,14 +66,14 @@ public class SortingByCounting {
         } while (!inputString.equalsIgnoreCase("exit"));
 
         String[] stringsArray = builder.toString().trim().split(" ");
-        for (int i = 0; i < stringsArray.length; i++) {
-            if (lineValidation(stringsArray[i])) {
-                list.add(Integer.parseInt(stringsArray[i]));
+        for (String s : stringsArray) {
+            if (lineValidation(s)) {
+                list.add(Integer.parseInt(s));
             }
         }
 
         int[] finalResult = new int[list.size()];
-        for (int i = 0; i < list.size() ; i++) {
+        for (int i = 0; i < list.size(); i++) {
             finalResult[i] = list.get(i);
         }
         return finalResult;
@@ -82,8 +82,8 @@ public class SortingByCounting {
     public static boolean lineValidation(String stringForTesting) {
         int counter = 0;
         char[] chars = stringForTesting.trim().toCharArray();
-        for (int i = 0; i < chars.length; i++) {
-            if (!Character.isDigit(chars[i]) && !String.valueOf(chars[i]).equals(" ")) {
+        for (char aChar : chars) {
+            if (!Character.isDigit(aChar) && !String.valueOf(aChar).equals(" ")) {
                 counter++;
             }
         }
