@@ -26,6 +26,12 @@ public class SortingByCounting {
                 array[arrayIndex++] = i + min;
             }
         }
+        showArrayOnDisplay(array);
+    }
+
+    public static void showArrayOnDisplay(int[] array) {
+        Arrays.stream(array).forEach(x -> System.out.print(x + " "));
+
     }
 }
 
