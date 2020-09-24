@@ -82,7 +82,9 @@ public class SortingByCounting {
         int counter = 0;
         char[] chars = stringForTesting.trim().toCharArray();
         for (char aChar : chars) {
-            if (!Character.isDigit(aChar) && !String.valueOf(aChar).equals("-")) {
+            if (!Character.isDigit(aChar)
+                    && !String.valueOf(aChar).equals("-")
+                    && !String.valueOf(aChar).equals("+")) {
                 counter++;
             }
         }
