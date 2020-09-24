@@ -52,8 +52,7 @@ public class SortingByCounting {
                 System.out.println("Your result is: ");
                 break;
             }
-            if (inputString.matches("^[a-zA-Z]+?")
-                    || inputString.matches("\\p{Punct}")
+            if (inputString.matches("^[a-zA-Z]+?|\\p{Punct}")
                     || inputString.startsWith(" ")
                     || inputString.equals("")) {
                 System.out.println("Input is invalid, try again: ");
@@ -83,7 +82,7 @@ public class SortingByCounting {
         int counter = 0;
         char[] chars = stringForTesting.trim().toCharArray();
         for (char aChar : chars) {
-            if (!Character.isDigit(aChar) && !String.valueOf(aChar).equals(" ")) {
+            if (!Character.isDigit(aChar) && !String.valueOf(aChar).equals("-")) {
                 counter++;
             }
         }
